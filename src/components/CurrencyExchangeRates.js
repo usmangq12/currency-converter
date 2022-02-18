@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "../assets/styles/table";
 import { Table } from "../shared/table";
 import { useSelector } from "react-redux";
+import TableFooter from "../shared/TableFooter";
 
 function CurrencyExchangeRates() {
   const columns = React.useMemo(
