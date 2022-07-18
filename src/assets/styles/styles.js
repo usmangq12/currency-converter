@@ -102,7 +102,7 @@ export const Image = styled.img`
 
 export const MainHeader = styled.div`
   background: #00be28;
-  height: 10vh;
+  height: 7vh;
 `;
 
 export const HeaderTitle = styled.div`

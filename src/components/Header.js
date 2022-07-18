@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const [currencies, setCurrencies] = useState([]);
-  const [selectedBaseCurrency, setSelectedBaseCurrency] = useState("");
   const [conversionValue, setConversionValue] = useState(null);
   const dispatch = useDispatch();
   const {
@@ -37,7 +36,6 @@ const Header = (props) => {
   const handleBaseCurrencySelection = (value) => {
     localStorage.setItem("base_currency", JSON.stringify(value));
     dispatch({ type: Currencies.fetchCurrencies, payload: "" });
-    setSelectedBaseCurrency(value);
     conversionValue && setConversionValue(null);
   };
 
@@ -45,12 +43,13 @@ const Header = (props) => {
     <div>
       <MainHeader>
         <InnerHeader>
-          <HeaderTitle>
-            <Link to="/">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <HeaderTitle>
               <Arrow> 🠔 </Arrow>
-            </Link>
-            currency Converter
-          </HeaderTitle>
+              currency Converter
+            </HeaderTitle>
+          </Link>
+
           {currencies && currencies.length ? (
             <DropdownContainer>
               <Dropdown
@@ -60,7 +59,7 @@ const Header = (props) => {
                 handleChange={(value) => handleBaseCurrencySelection(value)}
               />
             </DropdownContainer>
-          ): undefined}
+          ) : undefined}
         </InnerHeader>
       </MainHeader>
     </div>

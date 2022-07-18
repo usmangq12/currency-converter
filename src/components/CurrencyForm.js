@@ -58,7 +58,6 @@ const CurrencyForm = () => {
   };
 
   const handleResult = () => {
-    debugger
     if (selectedBaseCurrency && selectedTargetCurrency) {
       dispatch({
         type: Currencies.fetchCurrencies,
