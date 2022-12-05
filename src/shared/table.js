@@ -1,4 +1,5 @@
 import { usePagination, useTable } from "react-table";
+import { PageNo, PaginatorButton, SelectedRow } from "../assets/styles/styles";
 
 export function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -56,25 +57,39 @@ export function Table({ columns, data }) {
       </table>
 
       <div className="pagination">
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+        {/* <PaginatorButton></PaginatorButton>
+         */}
+        <PaginatorButton
+          onClick={() => gotoPage(0)}
+          disabled={!canPreviousPage}
+        >
           {"<<"}
-        </button>{" "}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        </PaginatorButton>
+        {/* <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}> */}
+        {/* {"<<"}
+        </button>{" "} */}
+        <PaginatorButton
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+        >
           {"<"}
-        </button>{" "}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        </PaginatorButton>{" "}
+        <PaginatorButton onClick={() => nextPage()} disabled={!canNextPage}>
           {">"}
-        </button>{" "}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+        </PaginatorButton>{" "}
+        <PaginatorButton
+          onClick={() => gotoPage(pageCount - 1)}
+          disabled={!canNextPage}
+        >
           {">>"}
-        </button>{" "}
-        <span>
+        </PaginatorButton>{" "}
+        <PageNo>
           Page{" "}
           <strong>
             {pageIndex + 1} of {pageOptions.length}
           </strong>{" "}
-        </span>
-        <select
+        </PageNo>
+        <SelectedRow
           value={pageSize}
           onChange={(e) => {
             setPageSize(Number(e.target.value));
@@ -85,7 +100,7 @@ export function Table({ columns, data }) {
               Show {pageSize}
             </option>
           ))}
-        </select>
+        </SelectedRow>
       </div>
     </>
   );

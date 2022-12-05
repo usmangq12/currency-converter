@@ -13,12 +13,18 @@ import {
   TextContainer,
   Heading2,
 } from "../assets/styles/styles";
+
 import { Dropdown } from "../shared/Dropdown";
-import logo from "../assets/Images/index.png";
+import logo from "../assets/Images/exchangeRate.svg";
 import { Link } from "react-router-dom";
 import { Input } from "../shared/Input";
 import { Currencies } from "../constants";
 
+import styled from "styled-components";
+
+const DropDowndDiv = styled.div`
+  margin-bottom: 20px;
+`;
 const CurrencyForm = () => {
   const [currencies, setCurrencies] = useState([]);
   const [currencyAmount, setCurrencyAmount] = useState(1);
@@ -67,54 +73,52 @@ const CurrencyForm = () => {
   };
 
   return (
-    <div>
-      <MainDiv>
-        <Div>
-          <Title>Currency Converter</Title>
-          <ItemCenter>
-            <Image src={logo} style={{ width: 300, height: 300 }} alt="logo" />
-          </ItemCenter>
-          <ContentContainer>
-            <Input
-              id="inputId"
-              type="number"
-              placeholder="Currency Value"
-              value={currencyAmount}
-              handleChange={(value) => setCurrencyAmount(value)}
-            />
-            {currencies && currencies.length && (
-              <MainDropdownContainer>
+    <MainDiv>
+      <Div>
+        <Title>Currency Converter</Title>
+        <ItemCenter>
+          <Image src={logo} style={{ width: 300, height: 300 }} alt="logo" />
+        </ItemCenter>
+        <ContentContainer>
+          <Input
+            id="inputId"
+            type="number"
+            placeholder="Currency Value"
+            value={currencyAmount}
+            handleChange={(value) => setCurrencyAmount(value)}
+          />
+          {currencies && currencies.length && (
+            <MainDropdownContainer>
+              <DropDowndDiv>
                 <Dropdown
                   id="baseId"
                   title="Base Currency"
                   options={currencies}
                   handleChange={(value) => handleBaseCurrencySelection(value)}
                 />
-                <Dropdown
-                  id="baseId"
-                  title="Target Currency"
-                  options={currencies}
-                  handleChange={(value) => handleTargetCurrencySelection(value)}
-                />
-              </MainDropdownContainer>
-            )}
-          </ContentContainer>
-          )
-          <TextContainer>
-            {conversionValue ? (
-              <Heading2>{conversionValue}</Heading2>
-            ) : undefined}
-          </TextContainer>
-          <ButtonContainer>
-            <Button onClick={() => handleResult()}>Show Results</Button>
-            <Link to="/currency-exchange-rates">
-              <Button>Exchange Rates</Button>
-            </Link>
-          </ButtonContainer>
-          <ButtonContainer></ButtonContainer>
-        </Div>
-      </MainDiv>
-    </div>
+              </DropDowndDiv>
+              <Dropdown
+                id="baseId"
+                title="Target Currency"
+                options={currencies}
+                handleChange={(value) => handleTargetCurrencySelection(value)}
+              />
+            </MainDropdownContainer>
+          )}
+        </ContentContainer>
+
+        <TextContainer>
+          {conversionValue ? <Heading2>{conversionValue}</Heading2> : undefined}
+        </TextContainer>
+        <ButtonContainer>
+          <Button onClick={() => handleResult()}>Show Results</Button>
+          <Link to="/currency-exchange-rates">
+            <Button>Exchange Rates</Button>
+          </Link>
+        </ButtonContainer>
+        <ButtonContainer></ButtonContainer>
+      </Div>
+    </MainDiv>
   );
 };
 
