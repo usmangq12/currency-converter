@@ -17,16 +17,14 @@ export const Button = styled.button`
   :focus {
     outline: none;
   }
-  // @media (max-width: 768px) {
-  //   // width: 89%;
-  //   padding: 12px 30px;
-  //   margin: 0;
-  //   padding: 12px 30px;
-  //   font-size: 16px;
-  // }
+  @media (max-width: 768px) {
+    padding: 12px 30px;
+    margin: 0;
+    padding: 12px 30px;
+    font-size: 16px;
+  }
   @media (max-width: 479px) {
-    // width: 94%;
-    padding: 12px 25px;
+    padding: 12px 19px;
     margin: 0;
     font-size: 16px;
   }
@@ -40,6 +38,13 @@ padding-top:50px;
 padding-bottom:50px;
 padding-left: 20px;
 padding-right: 20px;
+height:100vh;
+@media (max-width: 2560px) {
+  padding-top:10px;
+padding-bottom:10px;
+height:calc(100vh - 115px);
+ 
+}
 } 
 `;
 
@@ -62,9 +67,14 @@ export const ButtonContainer = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  color: black;
-  margin-left: 2vw;
-  margin-bottom: 10px;
+  color: #3a444b;
+  // margin-left: 2vw;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
 `;
 
 export const Paragraph = styled.p``;
@@ -95,16 +105,16 @@ export const HeaderTitle = styled.div`
   text-transform: capitalize;
   font-weight: 600;
   color: white;
-  @media (max-width: 479px) {
-    font-size: 1rem;
-    white-space: nowrap;
-  }
 `;
 
 export const InnerHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 479px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Arrow = styled.button`
@@ -134,8 +144,7 @@ export const DropdownContainer = styled.div`
     width: 25%;
   }
   @media (max-width: 479px) {
-    margin-left: 12%;
-    width: 40%;
+    width: 100%;
     margin-top: 20px;
   }
 `;

@@ -9,7 +9,7 @@ const MainCenter = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // height: 90vh;
+  height: calc(100vh - 115px);
   // overflow: auto;
   width: 100%;
 `;

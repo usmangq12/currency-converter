@@ -114,7 +114,7 @@ const CurrencyForm = () => {
         </ContentContainer>
 
         <TextContainer>
-          {conversionValue ? <Heading2>{conversionValue}</Heading2> : undefined}
+          {conversionValue ? <Heading2>{conversionValue}</Heading2> : 0}
         </TextContainer>
         <ButtonContainer>
           <Button onClick={() => handleResult()}>Show Results</Button>
