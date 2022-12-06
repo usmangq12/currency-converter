@@ -51,7 +51,13 @@ const CurrencyForm = () => {
         }
       }
     }
-  }, [conversionRates]);
+  }, [
+    conversionRates,
+    baseCode,
+    selectedBaseCurrency,
+    currencyAmount,
+    selectedTargetCurrency,
+  ]);
 
   const handleBaseCurrencySelection = (value) => {
     setSelectedBaseCurrency(value);
