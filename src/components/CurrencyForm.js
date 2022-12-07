@@ -10,7 +10,6 @@ import {
   ItemCenter,
   ContentContainer,
   MainDropdownContainer,
-  TextContainer,
   Heading2,
 } from "../assets/styles/styles";
 
@@ -112,10 +111,7 @@ const CurrencyForm = () => {
             </MainDropdownContainer>
           )}
         </ContentContainer>
-
-        <TextContainer>
-          {conversionValue ? <Heading2>{conversionValue}</Heading2> : 0}
-        </TextContainer>
+        {conversionValue ? <Heading2>{conversionValue}</Heading2> : null}
         <ButtonContainer>
           <Button onClick={() => handleResult()}>Show Results</Button>
           <Link to="/currency-exchange-rates">
