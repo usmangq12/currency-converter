@@ -9,13 +9,11 @@ const MainCenter = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 115px);
-  // overflow: auto;
+  height: 100vh;
   width: 100%;
 `;
 const ItemsCenter = styled.div`
   margin-bottom: 6rem;
-  overflow: auto;
   width: 50%;
   @media (max-width: 1199px) {
     width: 50%;

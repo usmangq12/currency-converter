@@ -2,21 +2,14 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   background: #ffff;
-  color: #3a444b;
+  font-weight: 600;
   border: 2px solid #3a444b;
   border-radius: 7px;
   padding: 12px 30px;
   font-size: 1.2rem;
   cursor: pointer;
   margin: 10px;
-  transition: 0.3s all;
-  :hover {
-    opacity: 0.8;
-    transition: 0.3s all;
-  }
-  :focus {
-    outline: none;
-  }
+
   @media (max-width: 768px) {
     padding: 12px 30px;
     margin: 0;
@@ -31,21 +24,17 @@ export const Button = styled.button`
 `;
 
 export const MainDiv = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-padding-top:50px;
-padding-bottom:50px;
-padding-left: 20px;
-padding-right: 20px;
-height:100vh;
-@media (max-width: 2560px) {
-  padding-top:10px;
-padding-bottom:10px;
-height:calc(100vh - 115px);
- 
-}
-} 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100vh;
+  @media (max-width: 1024px) {
+    height: unset;
+  }
 `;
 
 export const Div = styled.div`
@@ -67,15 +56,17 @@ export const ButtonContainer = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  color: #3a444b;
-  // margin-left: 2vw;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 10px;
   text-align: center;
+  background: #92e3a9;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  margin-top: 20px;
+  padding: 10px;
 `;
+export const ResultContainer = styled.span``;
 
 export const Paragraph = styled.p``;
 export const Heading2 = styled.h2``;
@@ -157,14 +148,6 @@ export const ContentContainer = styled.div`
 
 export const MainDropdownContainer = styled.div`
   width: 100%;
-  @media (max-width: 768px) {
-    width: 88%;
-    margin-left: 6%;
-  }
-  @media (max-width: 479px) {
-    width: 94%;
-    margin-left: 3%;
-  }
 `;
 
 export const PaginatorButton = styled.button`
@@ -177,6 +160,7 @@ export const PaginatorButton = styled.button`
   font-weight: 700;
   font-size: 20px;
   text-align: center;
+  cursor: pointer;
   @media (max-width: 479px) {
     width: 30px;
     height: 30px;

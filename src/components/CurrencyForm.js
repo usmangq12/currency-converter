@@ -11,7 +11,7 @@ import {
   ContentContainer,
   MainDropdownContainer,
   TextContainer,
-  Heading2,
+  ResultContainer,
 } from "../assets/styles/styles";
 
 import { Dropdown } from "../shared/Dropdown";
@@ -54,8 +54,8 @@ const CurrencyForm = () => {
   }, [
     conversionRates,
     baseCode,
-    selectedBaseCurrency,
     currencyAmount,
+    selectedBaseCurrency,
     selectedTargetCurrency,
   ]);
 
@@ -70,6 +70,7 @@ const CurrencyForm = () => {
   };
 
   const handleResult = () => {
+    localStorage.clear("base_currency");
     if (selectedBaseCurrency && selectedTargetCurrency) {
       dispatch({
         type: Currencies.fetchCurrencies,
@@ -114,10 +115,18 @@ const CurrencyForm = () => {
         </ContentContainer>
 
         <TextContainer>
-          {conversionValue ? <Heading2>{conversionValue}</Heading2> : 0}
+          Result=
+          {conversionValue ? (
+            <ResultContainer>{conversionValue}</ResultContainer>
+          ) : null}{" "}
         </TextContainer>
         <ButtonContainer>
-          <Button onClick={() => handleResult()}>Show Results</Button>
+          <Button
+            disabled={(!selectedBaseCurrency, !selectedTargetCurrency)}
+            onClick={() => handleResult()}
+          >
+            Show Results
+          </Button>
           <Link to="/currency-exchange-rates">
             <Button>Exchange Rates</Button>
           </Link>

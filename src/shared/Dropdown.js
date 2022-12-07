@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Select = styled.select`
   background: rgba(255, 255, 255, 0.15);
-  // box-shadow: 0 2px 6px 0 rgba(31, 38, 135, 0.37);
   color: gray;
   font-size: 1.2rem;
   border: none;
@@ -19,15 +18,6 @@ const Select = styled.select`
   -webkit-appearance: none;
   background-position-x: calc(100% - 20px);
   width: 100%;
-  option {
-    color: black;
-    background: white;
-    display: flex;
-    white-space: pre;
-    min-height: 20px;
-    margin-bottom: 0;
-    height: 6vh;
-  }
 `;
 
 export const Dropdown = ({ id, title, options, handleChange }) => {

@@ -22,7 +22,7 @@ export function Table({ columns, data }) {
     {
       columns,
       data,
-      initialState: { pageIndex: 2 },
+      initialState: { pageIndex: 0 },
     },
     usePagination
   );
@@ -57,17 +57,12 @@ export function Table({ columns, data }) {
       </table>
 
       <div className="pagination">
-        {/* <PaginatorButton></PaginatorButton>
-         */}
         <PaginatorButton
           onClick={() => gotoPage(0)}
           disabled={!canPreviousPage}
         >
           {"<<"}
         </PaginatorButton>
-        {/* <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}> */}
-        {/* {"<<"}
-        </button>{" "} */}
         <PaginatorButton
           onClick={() => previousPage()}
           disabled={!canPreviousPage}
