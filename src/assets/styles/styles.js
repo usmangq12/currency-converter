@@ -1,72 +1,50 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  background: #1da1f2;
-  color: white;
-  border: 2px solid #1da1f2;
+  background: #ffff;
+  font-weight: 600;
+  border: 2px solid #3a444b;
   border-radius: 7px;
-  padding: 20px 60px;
+  padding: 12px 30px;
   font-size: 1.2rem;
   cursor: pointer;
   margin: 10px;
-  transition: 0.3s all;
-  :hover {
-    opacity: 0.8;
-    transition: 0.3s all;
-  }
-  :focus {
-    outline: none;
-  }
+
   @media (max-width: 768px) {
-    width: 89%;
-    padding: 12px 0px;
+    padding: 12px 30px;
     margin: 0;
+    padding: 12px 30px;
+    font-size: 16px;
   }
   @media (max-width: 479px) {
-    width: 94%;
-    padding: 12px 0px;
+    padding: 12px 19px;
     margin: 0;
+    font-size: 16px;
   }
 `;
 
 export const MainDiv = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top:50px;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100vh;
+  @media (max-width: 1024px) {
+    height: unset;
+  }
 `;
 
 export const Div = styled.div`
-// display: flex;
-align-items: center;
-flex-direction: column;
-height: 80vh;
-width: 30vw;  
-background: rgba(255, 255, 255, 0.15);
-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-backdrop-filter: blur(8.5px);
--webkit-backdrop-filter: blur(8.5px);
+background:#3a444b;
 border-radius: 10px;
 color: #ffffff;
 text-transform: uppercase;
 letter-spacing: 0.4rem;
+padding:20px;
 }
-`;
-
-export const DropDownContainer = styled.div`
-  width: 12%;
-  @media (max-width: 1199px) {
-    width: 12%;
-  }
-  @media (max-width: 991px) {
-    width: 25%;
-  }
-  @media (max-width: 479px) {
-    margin-left: 12%;
-    width: 40%;
-    margin-top: 20px;
-  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -78,10 +56,17 @@ export const ButtonContainer = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  color: black;
-  margin-left: 2vw;
-  margin-bottom: 10px;
+  text-align: center;
+  background: #92e3a9;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  margin-top: 20px;
+  padding: 10px;
 `;
+export const ResultContainer = styled.span``;
 
 export const Paragraph = styled.p``;
 export const Heading2 = styled.h2``;
@@ -89,7 +74,7 @@ export const Heading2 = styled.h2``;
 export const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: #808080;
+  color: #fff;
   margin-top: 20px;
 `;
 
@@ -101,8 +86,9 @@ export const Image = styled.img`
 `;
 
 export const MainHeader = styled.div`
-  background: #00be28;
-  height: 7vh;
+  background: #21282d;
+  box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.5) !important;
+  padding: 20px;
 `;
 
 export const HeaderTitle = styled.div`
@@ -115,16 +101,23 @@ export const HeaderTitle = styled.div`
 export const InnerHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  @media (max-width: 479px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Arrow = styled.button`
   font-size: 2rem;
-  background: #00be28;
-  border: 1px solid #00be28;
+  background: #21282d;
+  border: 1px solid #21282d;
   color: #fff;
   margin-right: 10px;
   font-weight: bold;
+  @media (max-width: 479px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ItemCenter = styled.div`
@@ -134,32 +127,58 @@ export const ItemCenter = styled.div`
 `;
 
 export const DropdownContainer = styled.div`
-  width: 12%;
+  width: 200px;
   @media (max-width: 1199px) {
-    width: 12%;
+    width: 200px;
   }
   @media (max-width: 991px) {
     width: 25%;
   }
   @media (max-width: 479px) {
-    margin-left: 12%;
-    width: 40%;
+    width: 100%;
     margin-top: 20px;
   }
 `;
 
 export const ContentContainer = styled.div`
   text-align: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const MainDropdownContainer = styled.div`
   width: 100%;
-  @media (max-width: 768px) {
-    width: 88%;
-    margin-left: 6%;
-  }
+`;
+
+export const PaginatorButton = styled.button`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 5px;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
   @media (max-width: 479px) {
-    width: 94%;
-    margin-left: 3%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 300;
   }
+`;
+export const SelectedRow = styled.select`
+  padding: 10px;
+  border-radius: 20px;
+  @media (max-width: 479px) {
+    padding: 5px;
+    margin-top: 10px;
+  }
+`;
+
+export const PageNo = styled.span`
+  color: #ffff;
+  margin-left: 5px;
+  margin-right: 5px;
 `;
