@@ -9,24 +9,29 @@ const MainCenter = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 90vh;
-  overflow: auto;
+  height: 100vh;
   width: 100%;
 `;
 const ItemsCenter = styled.div`
   margin-bottom: 6rem;
-  overflow: auto;
-  width: 25%;
+  width: 50%;
   @media (max-width: 1199px) {
-    width: 40%;
+    width: 50%;
   }
   @media (max-width: 768px) {
     width: 100%;
   }
 `;
 
-const Heading = styled.h1`
+const Heading = styled.div`
   padding-top: 2rem;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  @media (max-width: 469px) {
+    font-size: 20px;
+    font-weight: 600;
+  }
 `;
 
 function CurrencyExchangeRates() {

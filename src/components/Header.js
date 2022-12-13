@@ -31,7 +31,7 @@ const Header = (props) => {
       }
     }
     getData();
-  }, [dispatch]);
+  }, [dispatch, currencies.length]);
 
   const handleBaseCurrencySelection = (value) => {
     localStorage.setItem("base_currency", JSON.stringify(value));
